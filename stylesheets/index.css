@@ -8,12 +8,13 @@ html {
 }
 
 body {
-  background: linear-gradient(to top right, rgb(21, 21, 21), rgb(34, 34, 34));
+  background: linear-gradient(to top, #121212 99%, #272727);
   font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl,
     CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif),
     sans-serif;
   line-height: 1.6;
   text-transform: none;
+  padding-bottom: 100px;
   -webkit-font-smoothig: antialiased;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -44,6 +45,7 @@ main {
   flex-wrap: wrap;
   width: 105%;
   bottom: 70px;
+  margin-top: 10px;
 }
 
 span {
@@ -58,12 +60,29 @@ a:hover span, a:hover path {
 }
 
 .whole-card {
-  background-color: rgb(31, 31, 31);
+  background-color: #1a1a1a;
   overflow: hidden;
+  width: 12rem;
+  height: 18rem;
+  position: relative;
+  top: 100px;
+  border-radius: 5px;
+}
+
+main .playlist {
+  row-gap: 100px;
+}
+
+.playlists-img {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  border-radius: 20px;
+  right: 3px;
 }
 
 .playlists-description {
-  font-size: 14px;
+  font-size: 13px;
   font-weight:550;
   color: #838181;
   position: relative;
@@ -74,6 +93,7 @@ a:hover span, a:hover path {
   font-weight: bold;
   font-size: 14px;
   position: relative;
+  font-family: sans-serif;
 }
 
 .cardText {
@@ -89,7 +109,7 @@ h1:target {
 .nav-rib {
   background-color: rgb(0, 0, 0);
   opacity: 0.5;
-  width: 91.6%;
+  width: 100%;
 }
 
 .side-nav {
@@ -100,20 +120,17 @@ h1:target {
   height: 100vh;
   -webkit-box-direction: normal;
   justify-content: space-around;
-  
 }
 
 .playlistTitle {
-  text-align: center;
-  padding-top: 5%;
+  padding-top: 100px;
   position: relative;
-  right: 30px;
+  left: 20px;
 }
 
 li {
   display: inline-block;
 }
-
 
 .details {
   margin-top: 8%;
@@ -183,15 +200,6 @@ span.track-card-title-span {
 .card-deck * {
   pointer-events: none;
 }
-
-/*
-                     #bg-img {
-                       background-repeat: no-repeat;
-                       background-size: cover;
-                       background-clip: border-box;
-                       background-position: center;
-                     }
-                     */
 
 .favorite-icon:hover {
   color: whitesmoke;
