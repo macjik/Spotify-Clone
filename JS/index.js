@@ -86,24 +86,15 @@ const APIController = (function () {
           for (const obj of imgObj) {
             const img = document.createElement("img");
             img.className =
-              "images playlists-img card-img-top mx-auto d-block text-center p-3";
+              "images playlists-img card-img-top d-block text-center p-3";
             img.src = obj.url;
             img.alt = "Responsive image";
-            img.style.height = "200px";
-            img.style.width = "200px";
-            img.style.position = "relative";
-            img.style.top = "1%";
-            img.style.borderRadius = "20px";
             img.imgObj = obj;
 
             card.append(img, cardBody);
             card.className =
               "card-deck whole-card ms-4 rounded playlists-card-top playlist-cards";
-            card.style.width = "12rem";
-            card.style.height = "18rem";
-            card.style.marginTop = "5%";
             card.obj = item;
-
             PlaylistSection.append(card);
           }
 
@@ -155,7 +146,8 @@ const APIController = (function () {
                   const jsonItems = json.items;
 
                   localStorage.setItem("Tracks", JSON.stringify(jsonItems));
-                  location.href = "https://macjik.github.io/Spotify-Clone/homeTracks.html";
+                  location.href =
+                    "https://macjik.github.io/Spotify-Clone/homeTracks.html";
                 };
                 syncPlaylistTracks();
               });
@@ -205,7 +197,6 @@ const synchronize = async () => {
 };
 synchronize();
 
-
 const tooltipTriggerList = [].slice.call(
   document.querySelectorAll('[data-bs-toggle="tooltip"]')
 );
@@ -217,9 +208,6 @@ window.addEventListener("load", () => {
   document.querySelector("div").style.display = "none";
 });
 
-//const tip = document.querySelector(".tool-tip");
-//const tippyBox = document.querySelector(".tippy-box");
-//const template = document.getElementById("template");
 let template = document.querySelector("#template");
 const tippyContent = document.querySelector(".tippy-content");
 const libraryTippy = document.querySelector(".library-tip-content");
