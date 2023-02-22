@@ -63,7 +63,7 @@ playlistDes.style.color = "white";
 totalSongsDom.style.color = "white";
 
 colorjs.prominent(playlistImg, { format: "hex" }).then((color) => {
-  detailsBg.style.background = `linear-gradient(to bottom, ${color[2]}, #242424 30%)`; //choose color[0] || color [1] || color[2]
+  detailsBg.style.background = `linear-gradient(to bottom, ${color[0]}, #242424 30%)`; //choose color[0] || color [1] || color[2]
   // IconsBg.style.background = `linear-gradient(to bottom, ${color[0]}90, #242424)`;
   // tracksBg.style.background = `linear-gradient(to bottom, ${color[0]}, #242424 5%)`; //needs some opacity or does not
   // result.style.background = color[0]
@@ -85,16 +85,8 @@ playlistDetails.append(
 );
 
 detailsBg.append(playlistDetails);
-detailsTransparentBg.style.opacity = "0.5";
-detailsTransparentBg.style.position = "relative";
-detailsTransparentBg.style.bottom = "150px";
-detailsTransparentBg.style.right = "50px";
-detailsTransparentBg.style.height = "2000px";
-detailsTransparentBg.style.width = "2000px";
-detailsTransparentBg.style.backgroundColor = "#242424";
 playlistDetails.append(detailsTransparentBg);
 
-//iconSection. transform the
 playIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="play-icon" viewBox="0
 0
 700 700" width="65" height="65"><circle
@@ -124,12 +116,6 @@ const homeTracksData = JSON.parse(localStorage.getItem("Tracks"));
 const Tracks = document.createElement("div"); //img, title, artist, album title, release date, duration + hover()
 Tracks.className = "tracks";
 
-// homeTracksData.forEach((track, i) => {
-//   const nums = document.createElement('h6')
-//   nums.className = 'track-order'
-//   nums.textContent = i
-//   console.log(nums);
-// });
 
 homeTracksData.forEach((tracks, index) => {
   const homeTrackTitle = tracks.track.name;
@@ -191,26 +177,19 @@ homeTracksData.forEach((tracks, index) => {
 
   Tracks.append(track);
 
-  console.log(homeTrackTitle, homeTrackImg, homeAlbumTitle, homeReleaseDate);
 });
-// console.log(homeTracksData.length); // line them up one by one
 tracksBg.append(Tracks);
 
 window.addEventListener("load", () => {
   document.querySelector("div").style.display = "none";
 });
 
-//const tip = document.querySelector(".tool-tip");
-//const tippyBox = document.querySelector(".tippy-box");
-//const template = document.getElementById("template");
 let template = document.querySelector("#template");
 const libraryTippy = document.querySelector(".library-tip-content");
 const createPlaylistTippy = document.querySelector(
   ".create-playlist-tip-content"
 );
 const likedSongsTippy = document.querySelector(".liked-songs-tip-content");
-//to prevent template.innerHTML u can loop through the tip and use tippy() for iterator
-// to prevent template.innerHTML u can use getElementById() instead of querySelector()
 
 tippy(libraryTippy, {
   theme: "tomato",
