@@ -14,30 +14,27 @@
     <title>Test</title>
   </head>
   <body>
-    <main role="main" class="col-10 parent-of-all">
-      <h3
-        class="h4 playlistTitle col-2 fw-bold text-white"
-        id="playlists-title"
-      >
+    <main role="main" class="col-10 col-md-10 col-sm-3 parent-of-all">
+      <h3 class="h4 playlistTitle col fw-bold text-white" id="playlists-title">
         Spotify Playlists
       </h3>
-      <section class="playlist"></section>
+      <section class="playlist col-12"></section>
     </main>
     <nav
-      class="navbar navbar-expand-lg pb-3 nav-rib font-monospace ms-auto fixed-top"
+      class="navbar navbar-expand-lg col nav-rib font-monospace fixed-top"
       style="height: 64px"
     >
       <div class="container-fluid"></div>
     </nav>
 
-    <nav class="side-ting">
+    <nav class="side-ting col">
       <div class="row flex-nowrap wrapper fixed-top" style="width: max-content">
         <div
-          class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 side-nav mb-auto"
+          class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 side-nav mb-auto col-sm-3"
           style="width: 235px"
         >
           <div
-            class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white div-side-nav justify-space-between"
+            class="d-flex flex-column col align-items-center align-items-sm-start px-3 pt-2 text-white div-side-nav justify-space-between"
           >
             <div role="banner" style="box-sizing: border-box">
               <a href="/" draggable="false" id="spotify-home">
@@ -59,12 +56,15 @@
               </a>
             </div>
             <ul
-              class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+              class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start col"
               style="position: relative; top: 30px; left: 25px"
               id="menu"
             >
               <li class="nav-item" id="home">
-                <a href="https://macjik.github.io/Spotify-Clone/#" class="nav-link align-middle px-0">
+                <a
+                  href="https://macjik.github.io/Spotify-Clone/#"
+                  class="nav-link align-middle px-0"
+                >
                   <svg
                     role="img"
                     style="position: relative; right: 8px"
@@ -210,32 +210,9 @@
         </div>
       </div>
     </nav>
-    <!--insert: Browse All-->
     <div class="result-div">
       <ul class="result" style="position: relative; bottom: 40px"></ul>
-      <ul id="tracks-result"></ul>
     </div>
-    <!-- <footer class="details">
-      <ul class="company">
-        <li class="text-white company-li fw-bold">Company</li>
-        <li class="li-tings text-white-50">About us</li>
-        <li class="li-tings text-white-50">Jobs</li>
-        <li class="li-tings text-white-50">For the Record</li>
-      </ul>
-      <ul class="community">
-        <li class="community-li text-white fw-bold">Community</li>
-        <li class="li-tings text-white-50">For performers</li>
-        <li class="li-tings text-white-50">For developers</li>
-        <li class="li-tings text-white-50">Advertisment</li>
-        <li class="li-tings text-white-50">For Investors</li>
-        <li class="li-tings text-white-50">For vendors</li>
-      </ul>
-      <ul class="external">
-        <li class="external-li text-white fw-bold">External links</li>
-        <li class="li-tings text-white-50">Help</li>
-        <li class="li-tings text-white-50">Free mobile app</li>
-      </ul>
-    </footer> -->
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="https://raw.githubusercontent.com/requirejs/text/latest/text.js"></script>
