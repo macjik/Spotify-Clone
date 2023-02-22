@@ -5,8 +5,8 @@
 html {
   font-family: Helvetica Neue, helvetica, arial, Hiragino Kaku Gothic Pro,
     Meiryo, MS Gothic, sans-serif;
-  background-color: rgb(31, 31, 31);
-  overflow-x: hidden;
+    background-color: rgb(19 19 19);
+    overflow-x: hidden;
 }
 
 body {
@@ -84,6 +84,14 @@ h1:target {
   -webkit-box-pack: end;
 }
 
+.playlists-card {
+  width: 199px;
+  height: 290px;
+  background-color: #181818;
+  border-radius: 5px;
+  position: relative;
+}
+
 .track-title {
   font-family: Helvetica, Arial, sans-serif;
   box-sizing: border-box;
@@ -130,14 +138,19 @@ span.track-card-title-span {
   filter: brightness(120%);
 }
 
-/*
-                     #bg-img {
-                       background-repeat: no-repeat;
-                       background-size: cover;
-                       background-clip: border-box;
-                       background-position: center;
-                     }
-*/
+.category-img {
+  height: 100px;
+  width: 100px;
+  margin-top: 1%;
+}
+
+.playlist-img {
+  height: 167px;
+  width: 167px;
+  margin-top: 1%;
+  border-radius: 5px;
+  position: relative;
+}
 
 .favorite-icon:hover {
   color: whitesmoke;
@@ -154,24 +167,24 @@ span.track-card-title-span {
 }
 
 .result-div {
-  margin-top: 0px; /* problem might be here as well */
+  margin-top: 0px;
   display: flex;
   flex-wrap: wrap;
-  background-color: rgb(19 19 19);
   flex-direction: column;
   width: 100%;
+  height: 100vh;
   position: relative;
 }
 
 .result {
-  margin-left: 190px; /* properties let the thing push upwards after a function */
-  margin-top: 180px; /* think of making another div for playlists where u can append this */
+  margin-left: 190px; 
+  margin-top: 180px; 
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   flex-direction: row;
   column-count: 8;
-  column-gap: 2px; /* hamma gap shu yerda. both categories and playlists are siblings, they have the same parents*/
+  column-gap: 2px;
   row-gap: 25px;
   /* position: relative; */
 }
@@ -206,17 +219,11 @@ span.track-card-title-span {
 }
 
 .input-group {
-  margin-left: 17.1%;
-  flex-grow: 0%;
-  flex-basis: 570px;
-  margin-top: 3px;
+  position: relative;
+  left: 400px;
+  top: 3px;
 }
 
-.search-input {
-  height: 40px;
-  width: 380px;
-  /*zooming issues*/
-}
 
 .search-input::placeholder {
   font-size: 14px;
