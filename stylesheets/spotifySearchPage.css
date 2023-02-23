@@ -145,7 +145,7 @@ span.track-card-title-span {
 }
 
 .result-div {
-  margin-top: 0px; /* problem might be here as well */
+  margin-top: 0px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -154,16 +154,15 @@ span.track-card-title-span {
 }
 
 .result {
-  margin-left: 190px; /* properties let the thing push upwards after a function */
-  margin-top: 180px; /* think of making another div for playlists where u can append this */
+  margin-left: 190px; 
+  margin-top: 180px; 
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   flex-direction: row;
   column-count: 8;
-  column-gap: 2px; /* hamma gap shu yerda. both categories and playlists are siblings, they have the same parents*/
+  column-gap: 2px; 
   row-gap: 25px;
-  /* position: relative; */
 }
 
 .category-img {
