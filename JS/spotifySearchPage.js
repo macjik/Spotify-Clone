@@ -61,9 +61,7 @@ const APIController = (function () {
 
         const showList = () => {
           results.innerHTML = "";
-          //remove categories from searching
 
-          //hide everything except categories. make tracks and playlists appear only when the input is typed
           filteredPlaylists
             .filter((item) => {
               return item.name.toLowerCase().includes(search_term);
@@ -135,7 +133,7 @@ const APIController = (function () {
             const span = document.createElement("span");
             span.className = "category-title";
             span.textContent = e.name;
-            //position the li to the new line everytime it comes to an end of the line. Done!. CSS
+
             cardBody.append(span);
             card.append(cardBody, categoryImg);
             results.append(card);
@@ -181,7 +179,6 @@ const APIController = (function () {
               );
 
               const dataID = e.currentTarget.categoryObj.id;
-              //have to fetch all the available playlists and tracks
               const syncPlaylists = async () => {
                 const fetchDataURL = await fetch(
                   `https://api.spotify.com/v1/browse/categories/${dataID}/playlists`,
@@ -253,7 +250,6 @@ const APIController = (function () {
         showList();
 
         let categoryCards = document.querySelectorAll(".categories-card");
-        //these don't make much sense. Either query all the cover cards and make colour them individually or remove the cover cards. Div issues. Done!
         categoryCards[0].style.backgroundColor = "rgb(39, 133, 106)";
         categoryCards[1].style.backgroundColor = "rgb(76, 104, 90)";
         categoryCards[2].style.backgroundColor = "olive";
@@ -325,10 +321,6 @@ const APIController = (function () {
     }
   };
 
-  // home.addEventListener("click", () => {
-  //   location.href = "http://localhost:8080/spotifyAPI.html";
-  // });
-
   return {
     getToken() {
       return _getToken();
@@ -368,9 +360,6 @@ const synchronize = async () => {
 
 synchronize();
 
-//const tip = document.querySelector(".tool-tip");
-//const tippyBox = document.querySelector(".tippy-box");
-//const template = document.getElementById("template");
 let template = document.querySelector("#template");
 const tippyContent = document.querySelector(".tippy-content");
 const libraryTippy = document.querySelector(".library-tip-content");
@@ -378,13 +367,10 @@ const createPlaylistTippy = document.querySelector(
   ".create-playlist-tip-content"
 );
 const likedSongsTippy = document.querySelector(".liked-songs-tip-content");
-//to prevent template.innerHTML u can loop through the tip and use tippy() for iterator
-// to prevent template.innerHTML u can use getElementById() instead of querySelector()
 
 tippy(tippyContent, {
-  //works nice
   theme: "tomato",
-  content: template.innerHTML, //customize it
+  content: template.innerHTML, 
   trigger: "click",
   allowHTML: true,
   placement: "bottom",
@@ -425,5 +411,3 @@ tippy(likedSongsTippy, {
   interactive: true,
   fill: "tomato",
 });
-
-
