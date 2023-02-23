@@ -46,6 +46,7 @@ const APIController = (function () {
             },
           }
         );
+        //playlists
         const dataTing = await fetchDataURL.json();
         const playlistData = dataTing.playlists.items;
 
@@ -60,6 +61,9 @@ const APIController = (function () {
 
         const showList = () => {
           results.innerHTML = "";
+          //remove categories from searching
+
+          //hide everything except categories. make tracks and playlists appear only when the input is typed
           filteredPlaylists
             .filter((item) => {
               return item.name.toLowerCase().includes(search_term);
@@ -76,6 +80,12 @@ const APIController = (function () {
               cardBody.className = "card-body card-text";
 
               playlistImg.src = e.images[0].url;
+              playlistImg.style.height = "167px";
+              playlistImg.style.width = "167px";
+              playlistImg.style.marginTop = "1%";
+              playlistImg.style.borderRadius = "5px";
+              playlistImg.style.position = "relative";
+
               const playlistName = e.name;
 
               const span = document.createElement("h6");
@@ -89,6 +99,11 @@ const APIController = (function () {
               description.textContent = Description.slice(0, 30) + "...";
 
               card.style.display = "none";
+              card.style.width = "199px";
+              card.style.height = "290px";
+              card.style.backgroundColor = "#181818";
+              card.style.borderRadius = "5px";
+              card.style.position = "relative";
 
               cardBody.append(span, description);
               card.append(playlistImg, cardBody);
@@ -112,11 +127,15 @@ const APIController = (function () {
             const Icons = e.icons;
             for (const obj of Icons) {
               categoryImg.src = obj.url;
+              categoryImg.style.height = "100px";
+              categoryImg.style.width = "100px";
+              categoryImg.style.marginTop = "1%";
             }
 
             const span = document.createElement("span");
             span.className = "category-title";
             span.textContent = e.name;
+            //position the li to the new line everytime it comes to an end of the line. Done!. CSS
             cardBody.append(span);
             card.append(cardBody, categoryImg);
             results.append(card);
@@ -162,6 +181,7 @@ const APIController = (function () {
               );
 
               const dataID = e.currentTarget.categoryObj.id;
+              //have to fetch all the available playlists and tracks
               const syncPlaylists = async () => {
                 const fetchDataURL = await fetch(
                   `https://api.spotify.com/v1/browse/categories/${dataID}/playlists`,
@@ -172,7 +192,8 @@ const APIController = (function () {
                 ); //playlists
                 const dataTing = await fetchDataURL.json();
                 const playlistsData = dataTing.playlists.items;
-                location.href = "https://macjik.github.io/Spotify-Clone/category.html";
+                location.href =
+                  "https://macjik.github.io/Spotify-Clone/category.html";
                 localStorage.setItem(
                   "categoryPlaylists",
                   JSON.stringify(playlistsData)
@@ -183,6 +204,11 @@ const APIController = (function () {
                   const playlistName = item.name;
                   const playlistsDataDescription = item.description;
                   const playlistDataImg = item.images[0].url;
+                  console.log(
+                    playlistName,
+                    playlistsDataDescription,
+                    playlistDataImg
+                  );
 
                   const playlistData = [
                     playlistName,
@@ -198,6 +224,8 @@ const APIController = (function () {
           const playlistCard = document.querySelectorAll(".playlists-card");
           playlistCard.forEach((item) => {
             item.addEventListener("click", (e) => {
+              console.log(e.currentTarget.playlistObj);
+
               const playlistTrackURL = e.currentTarget.playlistObj.tracks.href;
               localStorage.setItem(
                 "playlistTrackData",
@@ -215,7 +243,8 @@ const APIController = (function () {
                 localStorage.setItem("trackData", JSON.stringify(trackNames));
                 console.log(trackNames);
 
-                location.href = "https://macjik.github.io/Spotify-Clone/searchTracksPage.html";
+                location.href =
+                  "https://macjik.github.io/Spotify-Clone/searchTracksPage.html";
               };
               syncTracks();
             });
@@ -296,6 +325,10 @@ const APIController = (function () {
     }
   };
 
+  // home.addEventListener("click", () => {
+  //   location.href = "http://localhost:8080/spotifyAPI.html";
+  // });
+
   return {
     getToken() {
       return _getToken();
@@ -314,7 +347,7 @@ const APIController = (function () {
                                                   return _getTrack(token, trackEndPoint);
                                                 }, */
   };
-})();
+})(); //should write shit ton of tings
 
 const synchronize = async () => {
   const token = await APIController.getToken();
@@ -335,6 +368,9 @@ const synchronize = async () => {
 
 synchronize();
 
+//const tip = document.querySelector(".tool-tip");
+//const tippyBox = document.querySelector(".tippy-box");
+//const template = document.getElementById("template");
 let template = document.querySelector("#template");
 const tippyContent = document.querySelector(".tippy-content");
 const libraryTippy = document.querySelector(".library-tip-content");
@@ -342,11 +378,13 @@ const createPlaylistTippy = document.querySelector(
   ".create-playlist-tip-content"
 );
 const likedSongsTippy = document.querySelector(".liked-songs-tip-content");
+//to prevent template.innerHTML u can loop through the tip and use tippy() for iterator
+// to prevent template.innerHTML u can use getElementById() instead of querySelector()
 
 tippy(tippyContent, {
   //works nice
   theme: "tomato",
-  content: template.innerHTML, 
+  content: template.innerHTML, //customize it
   trigger: "click",
   allowHTML: true,
   placement: "bottom",
@@ -387,3 +425,5 @@ tippy(likedSongsTippy, {
   interactive: true,
   fill: "tomato",
 });
+
+
