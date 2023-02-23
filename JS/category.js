@@ -5,13 +5,12 @@ const tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => {
   return new bootstrap.Tooltip(tooltipTriggerEl);
 });
 
-window.onload = console.log(JSON.parse(localStorage.getItem("categoryData"))); //categories
+window.onload = console.log(JSON.parse(localStorage.getItem("categoryData")));
 
 window.onload = console.log(
   JSON.parse(localStorage.getItem("categoryPlaylists"))
 ); //category playlists
 
-// window.onload = console.log(JSON.parse(localStorage.getItem("syncPlaylists")));
 const result = document.querySelector(".results");
 const resultBg = document.querySelector(".bg");
 const playlistSection = document.createElement("div");
@@ -29,7 +28,7 @@ categoryDescription.textContent = `Popular ${category.name} playlists`;
 resultBg.append(categoryTitle);
 result.append(categoryDescription);
 
-const playlists = JSON.parse(localStorage.getItem("categoryPlaylists")); //the whole thing needs to have a proper position under an appropriate div
+const playlists = JSON.parse(localStorage.getItem("categoryPlaylists"));
 for (const item of playlists) {
   const card = document.createElement("div");
   card.className = "card-deck whole-card ms-4";
@@ -52,7 +51,7 @@ for (const item of playlists) {
   const itemDescription = item.description;
 
   playlistName = item.name;
-  playlistTitle.textContent = playlistName.slice(0, 20) + " "; //condition the title length with ...
+  playlistTitle.textContent = playlistName.slice(0, 20) + " ";
   playlistsDescription.textContent = itemDescription.slice(0, 45) + "...";
 
   card.style.width = "199px";
@@ -99,7 +98,6 @@ const hover = () => {
 hover();
 
 for (const card of playlistCards) {
-  //works only in nested click
   card.addEventListener("click", (e) => {
     const playlistObj = e.currentTarget.obj;
     const playlistURL = e.currentTarget.obj.href;
@@ -132,7 +130,7 @@ for (const card of playlistCards) {
       localStorage.setItem("playlist", JSON.stringify(playlistObj));
       localStorage.setItem("tracks", JSON.stringify(tracks));
 
-      location.href = "https://macjik.github.io/Spotify-Clone/tracksPage.html";
+      location.href = "https://macjik.github.io/Spotify-Clone/tracks.html";
     };
     tracks();
   });
@@ -142,9 +140,6 @@ window.addEventListener("load", () => {
   document.querySelector("div").style.display = "none";
 });
 
-//const tip = document.querySelector(".tool-tip");
-//const tippyBox = document.querySelector(".tippy-box");
-//const template = document.getElementById("template");
 let template = document.querySelector("#template");
 const libraryTippy = document.querySelector(".library-tip-content");
 const createPlaylistTippy = document.querySelector(
