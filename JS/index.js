@@ -101,7 +101,6 @@ const APIController = (function () {
           const playlistTracks = dataTing.playlists.items;
 
           const playlistCards = document.querySelectorAll(".card-deck");
-          // playlistCards.splice(1, 10)
 
           const hover = () => {
             playlistCards.forEach((card) => {
