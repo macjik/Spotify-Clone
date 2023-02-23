@@ -7,7 +7,6 @@ body {
     CircularSp-Grek, CircularSp-Deva, var(fallback-fonts, sans-serif),
     sans-serif;
   -webkit-font-smoothig: antialiased;
-  background: linear-gradient(to top right, rgb(21, 21, 21), rgb(34, 34, 34));
   overflow-x: hidden;
 }
 
