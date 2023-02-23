@@ -224,6 +224,7 @@ const APIController = (function () {
         showList();
 
         let categoryCards = document.querySelectorAll(".categories-card");
+        //these don't make much sense. Either query all the cover cards and make colour them individually or remove the cover cards. Div issues. Done!
         categoryCards[0].style.backgroundColor = "rgb(39, 133, 106)";
         categoryCards[1].style.backgroundColor = "rgb(76, 104, 90)";
         categoryCards[2].style.backgroundColor = "olive";
