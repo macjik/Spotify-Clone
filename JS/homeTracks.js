@@ -1,7 +1,3 @@
-window.onload = console.log(JSON.parse(localStorage.getItem("Tracks")));
-
-window.onload = console.log(JSON.parse(localStorage.getItem("Playlist")));
-
 const result = document.querySelector(".results");
 
 const homePlaylistData = JSON.parse(localStorage.getItem("Playlist"));
