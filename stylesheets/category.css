@@ -2,18 +2,13 @@
   box-sizing: border-box;
 }
 
-html {
-  fallback-fonts: Helvetica Neue, helvetica, arial, Hiragino Kaku Gothic Pro,
-    Meiryo, MS Gothic, sans-serif;
-  background-color: #181818;
-}
-
 body {
   font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl,
     CircularSp-Grek, CircularSp-Deva, var(fallback-fonts, sans-serif),
     sans-serif;
   -webkit-font-smoothig: antialiased;
-  background-color: #222223;
+  background: linear-gradient(to top right, rgb(21, 21, 21), rgb(34, 34, 34));
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -99,15 +94,6 @@ span.track-card-title-span {
   pointer-events: none;
 }
 
-/*
-                                          #bg-img {
-                                            background-repeat: no-repeat;
-                                            background-size: cover;
-                                            background-clip: border-box;
-                                            background-position: center;
-                                          }
-*/
-
 .results {
   position: relative;
   left: 190px;
@@ -164,15 +150,9 @@ span.track-card-title-span {
   top: 180px;
   left: 70px;
   font-weight: 750;
-  font-family:
-    CircularSpTitle,
-    CircularSpTitle-Tall,
-    CircularSp-Arab,
-    CircularSp-Hebr,
-    CircularSp-Cyrl,
-    CircularSp-Grek,
-    CircularSp-Deva,
-    sans-serif
+  font-family: CircularSpTitle, CircularSpTitle-Tall, CircularSp-Arab,
+    CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva,
+    sans-serif;
 }
 
 span {
@@ -181,13 +161,11 @@ span {
   display: flex;
 }
 
-
 .bg {
   position: relative;
   height: 450px;
   width: 100%;
   background-color: rgba(0, 0, 0);
-  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.437), black); */
   bottom: 300px;
 }
 
@@ -205,7 +183,6 @@ span {
   background-color: blue;
   color: yellow;
 }
-/* finally */
 .tippy-box[data-theme~="tomato"][data-placement^="bottom"]
   > .tippy-arrow::before {
   color: blue;
