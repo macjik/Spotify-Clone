@@ -1,6 +1,6 @@
-window.onload = console.log(JSON.parse(localStorage.getItem("Tracks"))); //tracks from home
+window.onload = console.log(JSON.parse(localStorage.getItem("Tracks")));
 
-window.onload = console.log(JSON.parse(localStorage.getItem("Playlist"))); //playlist from home
+window.onload = console.log(JSON.parse(localStorage.getItem("Playlist")));
 
 const result = document.querySelector(".results");
 
@@ -10,27 +10,27 @@ const homePlaylistsDataDescription = homePlaylistData.description;
 const homePlaylistImg = homePlaylistData.images[0].url;
 const totalTrackNums = homePlaylistData.tracks.total;
 
-const detailsBg = document.createElement("div"); //parent of playlistDetails
+const detailsBg = document.createElement("div");
 detailsBg.className = "details-bg";
 const detailsTransparentBg = document.createElement("div");
 detailsTransparentBg.className = "transparent-bg";
 const iconsBg = document.querySelector(".icons-bg");
 const tracksBg = document.querySelector(".tracks-bg");
-const iconsSection = document.createElement("div"); //playIcon, favourites icon, three dots are children of iconSection
+const iconsSection = document.createElement("div"); 
 iconsSection.className = "icon-section";
-const iconSubTitle = document.createElement("div"); //parent of iconSub
+const iconSubTitle = document.createElement("div");
 const playlistDetails = document.createElement("div");
 playlistDetails.className = "playlist-details";
 
-const playlistTitle = document.createElement("h1"); // belong to playlistDetails
+const playlistTitle = document.createElement("h1");
 playlistTitle.className = "playlist-title";
-const playlistImg = document.createElement("img"); // belong to playlistDetails
+const playlistImg = document.createElement("img");
 playlistImg.className = "playlist-img";
-const playlist = document.createElement("h6"); // belong to playlistDetails
+const playlist = document.createElement("h6");
 playlist.className = "playlist-string";
-const playlistDes = document.createElement("p"); // belong to playlistDetails
+const playlistDes = document.createElement("p");
 playlistDes.className = "playlist-description";
-const totalSongsDom = document.createElement("p"); // belong to playlistDetails
+const totalSongsDom = document.createElement("p"); 
 totalSongsDom.className = "playlist-total-song-num";
 
 const playIcon = document.createElement("div");
@@ -63,7 +63,7 @@ playlistDes.style.color = "white";
 totalSongsDom.style.color = "white";
 
 colorjs.prominent(playlistImg, { format: "hex" }).then((color) => {
-  detailsBg.style.background = `linear-gradient(to bottom, ${color[0]}, #242424 30%)`; //choose color[0] || color [1] || color[2]
+  detailsBg.style.background = `linear-gradient(to bottom, ${color[1]}, #242424 30%)`; //choose color[0] || color [1] || color[2]
   // IconsBg.style.background = `linear-gradient(to bottom, ${color[0]}90, #242424)`;
   // tracksBg.style.background = `linear-gradient(to bottom, ${color[0]}, #242424 5%)`; //needs some opacity or does not
   // result.style.background = color[0]
@@ -113,7 +113,7 @@ iconsBg.append(iconsSection);
 
 const homeTracksData = JSON.parse(localStorage.getItem("Tracks"));
 //title, artist, image, date, album title
-const Tracks = document.createElement("div"); //img, title, artist, album title, release date, duration + hover()
+const Tracks = document.createElement("div"); 
 Tracks.className = "tracks";
 
 
