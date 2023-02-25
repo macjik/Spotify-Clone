@@ -5,6 +5,7 @@
 html {
   fallback-fonts: Helvetica Neue, helvetica, arial, Hiragino Kaku Gothic Pro,
     Meiryo, MS Gothic, sans-serif;
+  overflow-x: hidden;
 }
 
 body {
@@ -122,34 +123,9 @@ h1:target {
   color: aqua;
 }
 
-.play-icon {
-}
-
-/*
-                                                               .albums-play-icon,
-                                                               .podcasts-play-icon {
-                                                                   margin-left: 120px;
-                                                                   margin-top: -150px;
-                                                               }
-                                                               
-                                                               .tracks-play-icon {
-                                                                   margin-left: 140px;
-                                                                   margin-top: -110px;
-                                                               }
-                                                               */
-.options-icon {
-}
-
 .time-icon {
   text-align: right;
 }
-
-/*
-                                                               .track-img {
-                                                                   filter: blur(10px);
-                                                                   -webkit-filter: blur(150px);
-                                                               }
-                                                               */
 
 #playlist-img {
   padding: 3rem;
@@ -213,18 +189,8 @@ span.track-card-title-span {
   width: 198.88px;
   height: 198.88px;
   display: flex;
-  /*pick up proper colours*/
-  /*position them all properly. DONE!*/
 }
 
-/*
-                                                               #bg-img {
-                                                                 background-repeat: no-repeat;
-                                                                 background-size: cover;
-                                                                 background-clip: border-box;
-                                                                 background-position: center;
-                                                               }
-                                          */
 
 .favorite-icon:hover {
   color: whitesmoke;
@@ -240,8 +206,6 @@ span.track-card-title-span {
 }
 
 .results {
-  /* margin-left: 190px; */
-  /* margin-top: 130px; */
   display: flex;
   flex-wrap: wrap;
   column-width: 100%;
@@ -254,11 +218,6 @@ span.track-card-title-span {
 .results {
     position: relative;
     width: 100%;
-}
-
-.results {}
-
-.category-img {
 }
 
 .category-title {
@@ -296,9 +255,6 @@ span.track-card-title-span {
   display: flex;
   box-sizing: border-box;
   filter: contrast(100%);
-  /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients
-  https://getcssscan.com/css-box-shadow-examples
-  */
   height: 2000px;
 }
 
@@ -343,18 +299,15 @@ span.track-card-title-span {
 }
 
 .icons-bg {
-  /* FONT-VARIANT: JIS04; */
   animation: none;
   left: 90px;
   width: 100%;
   position: relative;
-  /* display: flex; */
   height: 100%;
   border-bottom-style: none;
   justify-content: space-around;
   border: 0px;
   bottom: 1650px;
-  /* border-bottom: 0px; */
 }
 
 .icons-section {
@@ -376,21 +329,18 @@ span.track-card-title-span {
 }
 
 .play-icon-div {
-  /* fix em with margins */
   position: relative;
   left: 150px;
   display: inline;
 }
 
 .favourite-icon {
-  /* fix em with margins */
   position: relative;
   left: 180px;
   display: inline;
 }
 
 .options-icon {
-  /* fix em with margins */
   position: relative;
   left: 210px;
   display: inline;
@@ -486,8 +436,6 @@ a:hover span, a:hover path {
   fill: white;
 }
 
-/* workout the font-sizes first, and then height of the track div */
-
 em {
   font-size: 13.5px;
   font-style: normal;
@@ -499,7 +447,7 @@ em {
   background-color: blue;
   color: yellow;
 }
-/* finally */
+
 .tippy-box[data-theme~="tomato"][data-placement^="bottom"]
   > .tippy-arrow::before {
   color: blue;
