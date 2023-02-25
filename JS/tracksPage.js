@@ -63,7 +63,7 @@ playlistDes.style.color = "white";
 totalSongsDom.style.color = "white";
 
 colorjs.prominent(playlistImg, { format: "hex" }).then((color) => {
-  detailsBg.style.background = `linear-gradient(to bottom, ${color[0]}, #242424 30%)`; //choose color[0] || color [1] || color[2]
+  detailsBg.style.background = `linear-gradient(to bottom, ${color[1]}, #242424 30%)`; //choose color[0] || color [1] || color[2]
   // IconsBg.style.background = `linear-gradient(to bottom, ${color[0]}90, #242424)`;
   // tracksBg.style.background = `linear-gradient(to bottom, ${color[0]}, #242424 5%)`; //needs some opacity or does not
   // result.style.background = color[0]
